@@ -41,6 +41,7 @@ attribution: "国土地理院"
 fetch("data.geojson")
 .then(res => res.json())
 .then(data => {
+
 L.geoJSON(data, {
 onEachFeature: function(feature, layer){
 
@@ -52,14 +53,13 @@ feature.properties.description + "<br><br>" +
 );
 
 layer.on("click", function(){
-
-// ポップアップ表示
 layer.openPopup();
-
 });
 
 }
 }).addTo(map);
+
+});
 </script>
 
 </body>
