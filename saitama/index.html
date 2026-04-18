@@ -46,7 +46,18 @@ var line278 = L.polyline([
 color: "red",
 weight: 4
 }).addTo(map);
-
+fetch("data.geojson")
+.then(res => res.json())
+.then(data => {
+L.geoJSON(data, {
+onEachFeature: function(feature, layer){
+layer.bindPopup(
+"<b>" + feature.properties.name + "</b><br>" +
+feature.properties.difficulty
+);
+}
+}).addTo(map);
+});
 line278.bindPopup("埼玉県道278号");
 </script>
 
