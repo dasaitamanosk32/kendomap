@@ -6,7 +6,7 @@
       "properties": {},
       "geometry": {
       "type": "MultiLineString",
-      "coordinates": [
+      "coordinates": {
 　　　　　　[
           [
             140.87038276753202,
@@ -191,5 +191,6 @@
         ]
       }
     }
+  }
   ]
 }
