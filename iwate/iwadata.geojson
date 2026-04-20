@@ -1,0 +1,22 @@
+★県道地図追加★
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "★県道★号",
+        "rank": "★★★☆☆",
+        "description": "説明",
+        "page": "roads/★.html"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [★, ★],
+          [★, ★]
+        ]
+      }
+    }
+  ]
+}
