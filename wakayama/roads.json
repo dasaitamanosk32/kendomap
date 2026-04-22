@@ -1,0 +1,17 @@
+★県道一覧★
+[
+{
+"number": 182,
+"name": "境川金屋線",
+"rank": "★★★☆☆",
+"description": "超狭小・崖っぷち",
+"page": "roads/XX.html"
+},
+{
+"number": 41,
+"name": "青森県道41号",
+"rank": "★★★★☆",
+"description": "カーブ多い",
+"page": "roads/41.html"
+}
+]
