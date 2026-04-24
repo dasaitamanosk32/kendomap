@@ -12,5 +12,12 @@
 "rank": "★★★★★",
 "description": "路面最悪・峠区間通行不能",
 "page": "roads/181.html"
+},
+{
+"number": 218,
+"name": "平瀬上三栖線",
+"rank": "★★☆☆☆",
+"description": "狭い典型的和歌山険道",
+"page": "roads/218.html"
 }
 ]
