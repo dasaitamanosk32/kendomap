@@ -102,7 +102,53 @@ fetch("iwadata.json")
 });
 
 </script>
+<h2>県道一覧</h2>
 
+<table border="1" id="roadtable">
+</table>
+ <script>
+
+fetch("roads.json")
+.then(res => res.json())
+.then(data => {
+
+data.sort((a,b)=>a.number-b.number);
+
+let html = `
+<tr>
+<th>路線番号</th>
+<th>県道名</th>
+<th>ランク</th>
+<th>説明</th>
+</tr>
+`;
+
+data.forEach(road => {
+
+html += `
+<tr>
+<td>
+<a href="${road.page}">
+<img src="images/${road.number}.png" width="60">
+</a>
+</td>
+<td>
+<a href="${road.page}">
+${road.name}
+</a>
+</td>
+<td>${road.rank}</td>
+<td>${road.description}</td>
+</tr>
+`;
+
+});
+
+document.getElementById("roadtable").innerHTML = html;
+
+});
+
+ </script>
 
   
 </body>
