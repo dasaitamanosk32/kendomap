@@ -1,0 +1,24 @@
+★県道一覧★
+[
+{
+"number": 618,
+"name": "上世屋内山線",
+"rank": "★★★☆☆",
+"description": "ダート・通行止",
+"page": "roads/618.html"
+},
+{
+"number": 617,
+"name": "上延利線",
+"rank": "★★★★☆",
+"description": "通行止",
+"page": "roads/617.html"
+},
+{
+"number": 655,
+"name": "味土野大宮線",
+"rank": "★★★★★",
+"description": "通行止",
+"page": "roads/655.html"
+}
+]
