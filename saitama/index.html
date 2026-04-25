@@ -47,7 +47,7 @@
 
 <script>
 
-// ★県ごとにここだけ変更
+// 県ごとにここだけ変更
 const prefName = "埼玉県";
 const center = [36.02, 139.41]; // ←ここも県ごとに変える
 
@@ -85,24 +85,40 @@ fetch("saidata.json")
     onEachFeature: function(feature, layer){
 
   // マウス乗せ（PC）
-  layer.on("mouseover", function(e){
-    e.target.setStyle({
-      weight: 10,
-      color: "yellow"
+  layer.on("mouseover", function(){
+
+    let targetId = feature.properties.id;
+
+    geojson.eachLayer(function(l){
+      if(l.feature.properties.id === targetId){
+        l.setStyle({
+          weight: 10,
+          color: "#cc66ff"
+        });
+      }
     });
+
   });
 
   // マウス外れたら戻す
-  layer.on("mouseout", function(e){
-    geojson.resetStyle(e.target);
+  layer.on("mouseout", function(){
+    geojson.resetStyle();
   });
 
-  // クリック（スマホ対応）
+  // クリック（スマホ・PC）
   layer.on("click", function(){
 
-    layer.setStyle({
-      weight: 10,
-      color: "yellow"
+    geojson.resetStyle();
+
+    let targetId = feature.properties.id;
+
+    geojson.eachLayer(function(l){
+      if(l.feature.properties.id === targetId){
+        l.setStyle({
+          weight: 10,
+          color: "#cc66ff"
+        });
+      }
     });
 
     layer.bindPopup(
@@ -115,7 +131,6 @@ fetch("saidata.json")
   });
 
     }
-
   }).addTo(map);
 
 });
