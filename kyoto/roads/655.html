@@ -74,7 +74,7 @@ h1{
 <script>
 
 // ★ここだけ変えればOK（県道の位置）
-const center = [35.60, 135.15]; 
+const center = [35.635, 135.157]; 
 
 var map = L.map('smallmap').setView(center, 13);
 
@@ -85,7 +85,7 @@ L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
 
 // マーカー
 L.marker(center).addTo(map)
-  .bindPopup("京都府道655号")
+  .bindPopup("歩道区間の峠")
   .openPopup();
 
 </script>
