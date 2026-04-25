@@ -4,32 +4,36 @@
 <meta charset="utf-8">
 <title>京都府道655号</title>
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <style>
 body{
-font-family: sans-serif;
-max-width: 900px;
-margin: auto;
-padding: 20px;
-background:#fafafa;
+  font-family: sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background:#fafafa;
 }
 
 h1{
-border-bottom: 2px solid #333;
-padding-bottom: 6px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
 }
 
 .card{
-background:white;
-padding:15px;
-margin:15px 0;
-border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  background:white;
+  padding:15px;
+  margin:15px 0;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-iframe{
-width:100%;
-height:300px;
-border:none;
+/* ミニ地図 */
+#smallmap {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
 }
 </style>
 
@@ -43,7 +47,7 @@ border:none;
 <p><b>ランク：</b> ★★★★★</p>
 <p><b>特徴：</b> 幅員狭い・カーブ多め</p>
 <p><b>注意：</b>味土野〜内山味土野間通行不能。<br>
-  ただし、近畿自然歩道の京都府コース⑪として整備されており、歩行での走破は可能</p>
+ただし、近畿自然歩道の京都府コース⑪として整備されており、歩行での走破は可能</p>
 </div>
 
 <div class="card">
@@ -60,11 +64,31 @@ border:none;
 
 <div class="card">
 <p><b>マップ（簡易）</b></p>
-<p>※今後ここに小地図も入れられる</p>
+<div id="smallmap"></div>
 </div>
 
 <br>
 
 <a href="../index.html">← 京都府ページに戻る</a>
+
+<script>
+
+// ★ここだけ変えればOK（県道の位置）
+const center = [35.60, 135.15]; 
+
+var map = L.map('smallmap').setView(center, 13);
+
+// 国土地理院タイル
+L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+  attribution: "国土地理院"
+}).addTo(map);
+
+// マーカー
+L.marker(center).addTo(map)
+  .bindPopup("京都府道655号")
+  .openPopup();
+
+</script>
+
 </body>
 </html>
