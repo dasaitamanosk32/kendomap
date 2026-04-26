@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>京都府道654号</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+<style>
+body{
+font-family: sans-serif;
+max-width: 900px;
+margin: auto;
+padding: 20px;
+background:#fafafa;
+}
+
+h1{
+border-bottom: 2px solid #333;
+padding-bottom: 6px;
+}
+
+.card{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+#smallmap {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>京都府道654号　井辺平線</h1>
+
+<div class="card">
+<p><b>ランク：</b> ★★★☆☆</p>
+<p><b>特徴：</b> 狭い</p>
+</div>
+
+<div class="card">
+<p><b>ルート解説</b></p>
+<p>
+半分ほどは宇川に沿って進んでいくルート。宇川沿いの中津〜鞍内が特に狭い
+</p>
+</div>
+
+<div class="card">
+<p><b>走行動画</b></p>
+<a href="https://youtu.be/T6_pg4A0KXU?si=ZUR4QmNVbyF1gxoI/" target="_blank">京都府道654号〔井辺平線〕</a>
+</div>
+
+<div class="card">
+<p><b>ミニマップ</b></p>
+<div id="smallmap"></div>
+</div>
+
+<br>
+
+<a href="../index.html">← 京都府ページに戻る</a>
+
+<script>
+const center = [35.708991,135.159581]; 
+
+var map = L.map('smallmap').setView(center, 13);
+
+// 国土地理院タイル
+L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+  attribution: "国土地理院"
+}).addTo(map);
+
+// マーカー
+L.marker(center).addTo(map)
+  .bindPopup("宇川沿い区間")
+  .openPopup();
+
+</script>
+
+</body>
+</html>
