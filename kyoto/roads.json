@@ -19,5 +19,12 @@
 "rank": "★★★★☆",
 "description": "ダート・車両通行不能",
 "page": "roads/655.html"
+},
+{
+"number": 655,
+"name": "碇網野線",
+"rank": "★★★★☆",
+"description": "狭い・通行不能",
+"page": "roads/655.html"
 }
 ]
