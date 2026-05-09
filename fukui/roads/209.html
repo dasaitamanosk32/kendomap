@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>福井県道209号</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+<style>
+body{
+font-family: sans-serif;
+max-width: 900px;
+margin: auto;
+padding: 20px;
+background:#fafafa;
+}
+
+h1{
+border-bottom: 2px solid #333;
+padding-bottom: 6px;
+}
+
+.card{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+#smallmap {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>福井県道209号　五幡新保停車場線</h1>
+
+<div class="card">
+<p><b>ランク：</b> ★★★⭐️☆</p>
+<p><b>特徴：</b> 崖沿い狭道・堆積物大量</p>
+<p><b>注意：</b> 路面荒廃で通行困難</p>
+</div>
+
+<div class="card">
+<p><b>ルート解説</b></p>
+<p>
+海岸沿いを走る国道8号と山合を通る国道476号をウツロギ峠を越えて繋ぐ。五幡の集落を抜け山に入るあたりからウツロギ峠まで通行困難。ハイレベルな走者ならギリギリ通れるかも。五幡地区は以前は集落内を通る超狭道であったが、現在は田の間を通る二車線の新道(？)がある。しかし、新道は平地区間のみで、山間部は通行困難なままである。ちなみに、地図によって東側の末端が違っていて最早どれが正しいか分からない。とりあえず地理院地図に沿って紹介している。
+</p>
+</div>
+
+<div class="card">
+<p><b>参考動画・サイト</b></p>
+<a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.pref.fukui.lg.jp/doc/douken/fukuinodouro/fukuinodouro_d/fil/fukuinodouro2025_map.pdf&ved=2ahUKEwiMn_rWmqyUAxVlQfUHHRMdAbUQFnoECCUQAQ&usg=AOvVaw38slu6lMi1DsAltamclmbn/" target="_blank">福井県の道路2025（地図面）</a><br>
+<a href="https://yamaiga.com/road/fpr209/main.html" target="_blank">道路レポート 福井県道209号五幡新保停車場線 前編</a><br>
+<a href="https://youtu.be/Lwb-E9IdQYw?si=BM3OhX-zKZqBNgTM" target="_blank">【極悪険道】地図に載ってる県道なのに四駆も通過できない超悪路を走破！福井県道209号五幡新保停車場線　車両通行不可区間　国道8号から国道476号への近道県道‥Translation subtitles</a>
+</div>
+
+<div class="card">
+<p><b>ミニマップ</b></p>
+<div id="smallmap"></div>
+</div>
+
+<br>
+
+<a href="../index.html">← 福井県ページに戻る</a>
+
+<script>
+const center = [35.697642,136.102810]; 
+
+var map = L.map('smallmap').setView(center, 13);
+
+// 国土地理院タイル
+L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+  attribution: "国土地理院"
+}).addTo(map);
+
+// マーカー
+L.marker(center).addTo(map)
+  .bindPopup("ウツロギ峠")
+  .openPopup();
+
+</script>
+
+</body>
+</html>
